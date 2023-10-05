@@ -1,0 +1,10 @@
+// This codes configure TypeScript to compile main.ts file
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "strict": true
+  }
+}
+
