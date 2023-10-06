@@ -28,14 +28,14 @@ const studentsList: Student[] = [student1, student2];
 function renderTable() {
   const table = document.createElement("table");
 
-  // Create table header
+// Create table header
   const headerRow = table.insertRow();
   const headerCell1 = headerRow.insertCell();
   headerCell1.textContent = "First Name";
   const headerCell2 = headerRow.insertCell();
   headerCell2.textContent = "Location";
 
-  // Create table rows for each student
+// Create table rows for each student
   studentsList.forEach((student) => {
     const row = table.insertRow();
     const cell1 = row.insertCell();
@@ -44,7 +44,7 @@ function renderTable() {
     cell2.textContent = student.location;
   });
 
-  // Append the table to the document
+// Append the table to the document
   document.body.appendChild(table);
 }
 
