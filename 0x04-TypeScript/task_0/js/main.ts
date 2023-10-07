@@ -21,33 +21,51 @@ const student2: Student = {
   location: "Ikot Ekpene",
 };
 
-// Create an array containing the students
+// An array containing the students
 const studentsList: Student[] = [student1, student2];
 
 // Function to render the table
-function renderTable() {
-  const table = document.createElement("table");
+const body: HTMLBodyElement = document.getElementsByTagName("body")[0];
+const table: HTMLTableElement = document.createElement('table');
+const thead: HTMLTableSectionElement = document.createElement('thead');
+const th1: HTMLTableCellElement = document.createElement('th');
+const th2: HTMLTableCellElement = document.createElement('th');
 
-// Create table header
-  const headerRow = table.insertRow();
-  const headerCell1 = headerRow.insertCell();
-  headerCell1.textContent = "First Name";
-  const headerCell2 = headerRow.insertCell();
-  headerCell2.textContent = "Location";
+th1.innerText = 'First Name';
+th2.innerText = 'Location';
+th1.style.border = '1px solid gray';
+th2.style.border = '1px solid gray';
+th1.style.padding = '.5rem';
+th2.style.padding = '.5rem';
+table.style.border = '1px solid gray';
+table.style.borderCollapse = 'collapse';
 
-// Create table rows for each student
-  studentsList.forEach((student) => {
-    const row = table.insertRow();
-    const cell1 = row.insertCell();
-    cell1.textContent = student.firstName;
-    const cell2 = row.insertCell();
-    cell2.textContent = student.location;
-  });
 
-// Append the table to the document
-  document.body.appendChild(table);
-}
 
-// Call the renderTable function
-renderTable();
+thead.append(th1);
+thead.append(th2);
 
+table.append(thead);
+
+
+studentList.forEach((student) => {
+  const row: HTMLTableRowElement = document.createElement('tr');
+
+  const column1: HTMLTableCellElement = document.createElement('td');
+  const column2: HTMLTableCellElement = document.createElement('td');
+
+  column1.innerText = student.firstName;
+  column2.innerText = student.lastName;
+
+  column1.style.border = '1px solid gray';
+  column2.style.border = '1px solid gray';
+  column1.style.padding = '.5rem';
+  column2.style.padding = '.5rem';
+
+  row.append(column1);
+  row.append(column2)
+
+  table.append(row);
+});
+
+body.append(table)
