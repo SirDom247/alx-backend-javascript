@@ -1,3 +1,5 @@
+//Advanced types Part 1
+
 interface DirectorInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
