@@ -2,8 +2,8 @@ const { expect } = require('chai');
 const { it, describe } = require('mocha');
 const sinon = require('sinon');
 
-const Utils = require('./utils.js');
-const sendPaymentRequestToApi = require('./4-payment.js');
+const Utils = require('./utils');
+const sendPaymentRequestToApi = require('./4-payment');
 
 describe('', () => {
   const checkSoy = sinon.spy(console, 'log');
